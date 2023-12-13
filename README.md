@@ -3,7 +3,15 @@
 <img src="https://github.com/rbizoi/PythonFormation/blob/main/images/python-image-logo-940x530.jpeg" width="512">
 
 # Installation 
+
+## Anaconda 
+
+<img src="https://github.com/rbizoi/PythonFormation/blob/main/images/anaconda.png" width="512">
+
+
 https://www.anaconda.com/download
+
+## Environnement Python
 
 ```
 conda activate root
