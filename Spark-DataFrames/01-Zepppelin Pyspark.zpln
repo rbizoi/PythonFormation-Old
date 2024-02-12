@@ -1,0 +1,478 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nspark",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:31:14+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 12,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\n            <div>\n                <p><b>SparkSession - hive</b></p>\n                \n        <div>\n            <p><b>SparkContext</b></p>\n\n            <p><a href=\"http://jupiter.olimp.fr:4040\">Spark UI</a></p>\n\n            <dl>\n              <dt>Version</dt>\n                <dd><code>v3.0.0</code></dd>\n              <dt>Master</dt>\n                <dd><code>spark://jupiter.olimp.fr:7077</code></dd>\n              <dt>AppName</dt>\n                <dd><code>Zeppelin</code></dd>\n            </dl>\n        </div>\n        \n            </div>\n        "
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1596746314407_1411951334",
+      "id": "paragraph_1596746314407_1411951334",
+      "dateCreated": "2020-08-06T22:38:34+0200",
+      "dateStarted": "2024-01-23T16:31:14+0100",
+      "dateFinished": "2024-01-23T16:31:14+0100",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:1952"
+    },
+    {
+      "text": "%pyspark \n\nfrom pyspark.sql.functions import *\n\nmeteoDataFrame  = spark.read.format('csv').option('sep',';').option('header','true').option('nullValue','mq').option('inferSchema', 'true').load('/user/spark/donnees/meteo/*')",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:32:18+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=20",
+              "$$hashKey": "object:2324"
+            },
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=21",
+              "$$hashKey": "object:2325"
+            },
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=22",
+              "$$hashKey": "object:2326"
+            },
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=23",
+              "$$hashKey": "object:2327"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706023533139_909631454",
+      "id": "paragraph_1706023533139_909631454",
+      "dateCreated": "2024-01-23T16:25:33+0100",
+      "dateStarted": "2024-01-23T16:32:18+0100",
+      "dateFinished": "2024-01-23T16:33:42+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1953"
+    },
+    {
+      "text": "%pyspark\nmeteoDataFrame.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:38:19+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- numer_sta: integer (nullable = true)\n |-- date: long (nullable = true)\n |-- pmer: integer (nullable = true)\n |-- tend: integer (nullable = true)\n |-- cod_tend: integer (nullable = true)\n |-- dd: integer (nullable = true)\n |-- ff: double (nullable = true)\n |-- t: double (nullable = true)\n |-- td: double (nullable = true)\n |-- u: integer (nullable = true)\n |-- vv: integer (nullable = true)\n |-- ww: integer (nullable = true)\n |-- w1: integer (nullable = true)\n |-- w2: integer (nullable = true)\n |-- n: integer (nullable = true)\n |-- nbas: integer (nullable = true)\n |-- hbas: integer (nullable = true)\n |-- cl: integer (nullable = true)\n |-- cm: integer (nullable = true)\n |-- ch: integer (nullable = true)\n |-- pres: integer (nullable = true)\n |-- niv_bar: integer (nullable = true)\n |-- geop: integer (nullable = true)\n |-- tend24: integer (nullable = true)\n |-- tn12: double (nullable = true)\n |-- tn24: double (nullable = true)\n |-- tx12: double (nullable = true)\n |-- tx24: double (nullable = true)\n |-- tminsol: double (nullable = true)\n |-- sw: integer (nullable = true)\n |-- tw: double (nullable = true)\n |-- raf10: double (nullable = true)\n |-- rafper: double (nullable = true)\n |-- per: integer (nullable = true)\n |-- etat_sol: integer (nullable = true)\n |-- ht_neige: double (nullable = true)\n |-- ssfrai: double (nullable = true)\n |-- perssfrai: integer (nullable = true)\n |-- rr1: double (nullable = true)\n |-- rr3: double (nullable = true)\n |-- rr6: double (nullable = true)\n |-- rr12: double (nullable = true)\n |-- rr24: double (nullable = true)\n |-- phenspe1: double (nullable = true)\n |-- phenspe2: double (nullable = true)\n |-- phenspe3: double (nullable = true)\n |-- phenspe4: double (nullable = true)\n |-- nnuage1: integer (nullable = true)\n |-- ctype1: integer (nullable = true)\n |-- hnuage1: integer (nullable = true)\n |-- nnuage2: integer (nullable = true)\n |-- ctype2: integer (nullable = true)\n |-- hnuage2: integer (nullable = true)\n |-- nnuage3: integer (nullable = true)\n |-- ctype3: integer (nullable = true)\n |-- hnuage3: integer (nullable = true)\n |-- nnuage4: integer (nullable = true)\n |-- ctype4: integer (nullable = true)\n |-- hnuage4: integer (nullable = true)\n |-- _c59: string (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024270787_1453612720",
+      "id": "paragraph_1706024270787_1453612720",
+      "dateCreated": "2024-01-23T16:37:50+0100",
+      "dateStarted": "2024-01-23T16:38:19+0100",
+      "dateFinished": "2024-01-23T16:38:20+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1954"
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.sql.types     import StructType, StructField, FloatType, IntegerType, StringType\n\nschema = StructType([\n        StructField('Id'           , StringType() , True),\n        StructField('ville'        , StringType() , True),\n        StructField('latitude'     , FloatType() , True),\n        StructField('longitude'    , FloatType() , True),\n        StructField('altitude'     , IntegerType() , True)])\n\nvilles  = spark.read.format('csv').option('sep',';').option('mergeSchema', 'true').option('header','true').schema(schema).load('/user/spark/donnees/postesSynop.csv') \n",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:35:58+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706023738147_267116431",
+      "id": "paragraph_1706023738147_267116431",
+      "dateCreated": "2024-01-23T16:28:58+0100",
+      "dateStarted": "2024-01-23T16:35:58+0100",
+      "dateFinished": "2024-01-23T16:35:58+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1955"
+    },
+    {
+      "text": "%pyspark\nvilles.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:38:49+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Id: string (nullable = true)\n |-- ville: string (nullable = true)\n |-- latitude: float (nullable = true)\n |-- longitude: float (nullable = true)\n |-- altitude: integer (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024318575_711822713",
+      "id": "paragraph_1706024318575_711822713",
+      "dateCreated": "2024-01-23T16:38:38+0100",
+      "dateStarted": "2024-01-23T16:38:49+0100",
+      "dateFinished": "2024-01-23T16:38:49+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1956"
+    },
+    {
+      "text": "%pyspark\n\nmeteo = villes.join(meteoDataFrame,meteoDataFrame.numer_sta == villes.Id)",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:40:06+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024158661_616373255",
+      "id": "paragraph_1706024158661_616373255",
+      "dateCreated": "2024-01-23T16:35:58+0100",
+      "dateStarted": "2024-01-23T16:40:06+0100",
+      "dateFinished": "2024-01-23T16:40:07+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1957"
+    },
+    {
+      "text": "%pyspark\nmeteo.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:40:09+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Id: string (nullable = true)\n |-- ville: string (nullable = true)\n |-- latitude: float (nullable = true)\n |-- longitude: float (nullable = true)\n |-- altitude: integer (nullable = true)\n |-- numer_sta: integer (nullable = true)\n |-- date: long (nullable = true)\n |-- pmer: integer (nullable = true)\n |-- tend: integer (nullable = true)\n |-- cod_tend: integer (nullable = true)\n |-- dd: integer (nullable = true)\n |-- ff: double (nullable = true)\n |-- t: double (nullable = true)\n |-- td: double (nullable = true)\n |-- u: integer (nullable = true)\n |-- vv: integer (nullable = true)\n |-- ww: integer (nullable = true)\n |-- w1: integer (nullable = true)\n |-- w2: integer (nullable = true)\n |-- n: integer (nullable = true)\n |-- nbas: integer (nullable = true)\n |-- hbas: integer (nullable = true)\n |-- cl: integer (nullable = true)\n |-- cm: integer (nullable = true)\n |-- ch: integer (nullable = true)\n |-- pres: integer (nullable = true)\n |-- niv_bar: integer (nullable = true)\n |-- geop: integer (nullable = true)\n |-- tend24: integer (nullable = true)\n |-- tn12: double (nullable = true)\n |-- tn24: double (nullable = true)\n |-- tx12: double (nullable = true)\n |-- tx24: double (nullable = true)\n |-- tminsol: double (nullable = true)\n |-- sw: integer (nullable = true)\n |-- tw: double (nullable = true)\n |-- raf10: double (nullable = true)\n |-- rafper: double (nullable = true)\n |-- per: integer (nullable = true)\n |-- etat_sol: integer (nullable = true)\n |-- ht_neige: double (nullable = true)\n |-- ssfrai: double (nullable = true)\n |-- perssfrai: integer (nullable = true)\n |-- rr1: double (nullable = true)\n |-- rr3: double (nullable = true)\n |-- rr6: double (nullable = true)\n |-- rr12: double (nullable = true)\n |-- rr24: double (nullable = true)\n |-- phenspe1: double (nullable = true)\n |-- phenspe2: double (nullable = true)\n |-- phenspe3: double (nullable = true)\n |-- phenspe4: double (nullable = true)\n |-- nnuage1: integer (nullable = true)\n |-- ctype1: integer (nullable = true)\n |-- hnuage1: integer (nullable = true)\n |-- nnuage2: integer (nullable = true)\n |-- ctype2: integer (nullable = true)\n |-- hnuage2: integer (nullable = true)\n |-- nnuage3: integer (nullable = true)\n |-- ctype3: integer (nullable = true)\n |-- hnuage3: integer (nullable = true)\n |-- nnuage4: integer (nullable = true)\n |-- ctype4: integer (nullable = true)\n |-- hnuage4: integer (nullable = true)\n |-- _c59: string (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024361641_352621711",
+      "id": "paragraph_1706024361641_352621711",
+      "dateCreated": "2024-01-23T16:39:21+0100",
+      "dateStarted": "2024-01-23T16:40:09+0100",
+      "dateFinished": "2024-01-23T16:40:09+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1958"
+    },
+    {
+      "text": "%pyspark\n\n\nmeteo.write\\\n       .mode('overwrite')\\\n       .format('parquet')\\\n       .option('path', '/user/spark/meteoFrance')\\\n       .save()\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:42:46+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=25",
+              "$$hashKey": "object:2627"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024376447_328611414",
+      "id": "paragraph_1706024376447_328611414",
+      "dateCreated": "2024-01-23T16:39:36+0100",
+      "dateStarted": "2024-01-23T16:42:46+0100",
+      "dateFinished": "2024-01-23T16:44:11+0100",
+      "status": "FINISHED",
+      "$$hashKey": "object:1959"
+    },
+    {
+      "text": "%pyspark\nspark.sql(\"select * from parquet.\"+\n          \"`/user/spark/meteoFrance` \").toPandas().head(5)",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:44:30+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=27",
+              "$$hashKey": "object:2678"
+            },
+            {
+              "jobUrl": "http://jupiter.olimp.fr:4040/jobs/job?id=28",
+              "$$hashKey": "object:2679"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024541080_458263688",
+      "id": "paragraph_1706024541080_458263688",
+      "dateCreated": "2024-01-23T16:42:21+0100",
+      "dateStarted": "2024-01-23T16:44:30+0100",
+      "dateFinished": "2024-01-23T16:44:14+0100",
+      "status": "RUNNING",
+      "$$hashKey": "object:1960"
+    },
+    {
+      "text": "%pyspark\nmeteo.write.saveAsTable(name=\"meteo\", mode=\"overwrite\")",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:45:24+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024643831_195483456",
+      "id": "paragraph_1706024643831_195483456",
+      "dateCreated": "2024-01-23T16:44:03+0100",
+      "dateStarted": "2024-01-23T16:45:24+0100",
+      "status": "PENDING",
+      "$$hashKey": "object:1961"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2024-01-23T16:45:24+0100",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1706024724340_30178187",
+      "id": "paragraph_1706024724340_30178187",
+      "dateCreated": "2024-01-23T16:45:24+0100",
+      "status": "READY",
+      "$$hashKey": "object:1962"
+    }
+  ],
+  "name": "Zepppelin Pyspark",
+  "id": "2FFAWM1SF",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-SNAPSHOT",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Zepppelin Pyspark"
+}
